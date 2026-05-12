@@ -8,9 +8,14 @@ const rehype_format_1 = __importDefault(require("rehype-format"));
 class WRehypeFormat extends wp_unified_1.WUnifiedPlugin {
     apply(processor, options) {
         if (options === undefined)
-            return processor.use(rehype_format_1.default);
+            processor = processor.use(rehype_format_1.default);
         else
-            return processor.use(rehype_format_1.default, options);
+            processor = processor.use(rehype_format_1.default, options);
+        if (options.snapshot === true)
+            processor.apply(() => (tree) => {
+                this.result.ast = structuredClone(tree);
+            });
+        return processor;
     }
 }
 exports.default = WRehypeFormat;

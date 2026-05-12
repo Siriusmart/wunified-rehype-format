@@ -4,8 +4,15 @@ import rehypeFormat from "rehype-format"
 export default class WRehypeFormat extends WUnifiedPlugin {
     apply(processor: UntypedProcessor, options: any): UntypedProcessor {
         if (options === undefined)
-            return processor.use(rehypeFormat)
+            processor = processor.use(rehypeFormat)
         else
-            return processor.use(rehypeFormat, options)
+            processor = processor.use(rehypeFormat, options)
+
+        if (options.snapshot === true)
+            processor.apply(() => (tree: any) => {
+                this.result.ast = structuredClone(tree)
+            })
+
+        return processor;
     }
 }
