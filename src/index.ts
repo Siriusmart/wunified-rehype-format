@@ -10,7 +10,7 @@ export default class WRehypeFormat extends WUnifiedPlugin {
 
         if (options.snapshot === true)
             processor.apply(() => (tree: any) => {
-                this.result.ast = structuredClone(tree)
+                this.result.content = structuredClone(tree)
             })
 
         return processor;

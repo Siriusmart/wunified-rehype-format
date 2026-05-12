@@ -13,7 +13,7 @@ class WRehypeFormat extends wp_unified_1.WUnifiedPlugin {
             processor = processor.use(rehype_format_1.default, options);
         if (options.snapshot === true)
             processor.apply(() => (tree) => {
-                this.result.ast = structuredClone(tree);
+                this.result.content = structuredClone(tree);
             });
         return processor;
     }
