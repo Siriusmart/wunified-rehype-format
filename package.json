@@ -1,6 +1,6 @@
 {
     "name": "wunified-rehype-format",
-    "version": "0.1.4",
+    "version": "0.1.6",
     "description": "UnifiedJS::RehypeFormat for Webpan",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
@@ -15,7 +15,7 @@
     "keywords": [],
     "author": "",
     "license": "AGPL-3.0-only",
-    "type": "commonjs",
+    "type": "module",
     "bugs": {
         "url": "https://github.com/siriusmart/wunified-rehype-format/issues"
     },

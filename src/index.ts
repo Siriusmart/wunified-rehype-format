@@ -1,5 +1,5 @@
-import { UntypedProcessor, WUnifiedPlugin } from "wp-unified"
 import rehypeFormat from "rehype-format"
+import { UntypedProcessor, WUnifiedPlugin } from "wp-unified"
 
 export default class WRehypeFormat extends WUnifiedPlugin {
     apply(processor: UntypedProcessor, options: any): UntypedProcessor {
